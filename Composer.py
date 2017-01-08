@@ -17,9 +17,6 @@ for line in open(file):
 
 
 
-
-raw_text = open(file).read()
-
 chars = sorted(list(set(raw_text)))
 char_to_int = dict((c, i) for i, c in enumerate(chars))
 # summarize the loaded data
