@@ -10,18 +10,15 @@ from keras.utils import np_utils
 file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
 
 split_data = []
-
+voc_map = {}
+n = 0
 for line in open(file):
     line = line.rstrip('\n')
     split_data.append(line.split('\t'))
+    for token in line.split('\t'):
+        if not token in voc_map:
+            voc_map.update({token: n})
+            n += 1
 
 
-
-chars = sorted(list(set(raw_text)))
-char_to_int = dict((c, i) for i, c in enumerate(chars))
-# summarize the loaded data
-n_chars = len(raw_text)
-n_vocab = len(chars)
-print("Total Characters: ", n_chars)
-print("Total Vocab: ", n_vocab)
 pass
