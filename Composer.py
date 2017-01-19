@@ -11,7 +11,7 @@ file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
 
 raw = []
 voc_map = {}
-nvoc = 0
+nvoc = 1
 nsamp = 0
 for line in open(file):
     nsamp += 1
@@ -35,12 +35,27 @@ for i in range(len(raw)):
         maxa = a
     encoded.append(tmp)
 
-padded = np.empty((nsamp, maxa))
+padded = []
 for row in encoded:
-    tmp = np.array(np.pad(row, maxa))
-    np.append(padded, tmp)
+    tmp = np.pad(row, (0, maxa - len(row)), mode='constant', constant_values=0)
+    padded.append(tmp)
 
+seq_length = 100
+dataX = []
+dataY = []
 
-
+for i in range(0, len(padded) - seq_length, 1):
+    dataX.append(padded[i:i + seq_length])
+    dataY.append(padded[i + seq_length])
+    n_patterns = len(dataX)
+print("Total number of training cases: " + str(n_patterns))
 
 pass
+
+X = np.reshape(dataX, (n_patterns, seq_length, maxa))
+X = X / float(nvoc)
+
+Y = np_utils.to_categorical(dataY, nvoc)
+pass
+# one hot encode the output variable
+# y = np_utils.to_categorical(dataY)
