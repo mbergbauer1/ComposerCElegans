@@ -63,5 +63,3 @@ for i in range(len(dataY)):
     Y.append(tmp)
 
 pass
-# one hot encode the output variable
-# y = np_utils.to_categorical(dataY)
