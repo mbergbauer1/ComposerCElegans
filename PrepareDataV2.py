@@ -1,15 +1,21 @@
-
-
 from keras.utils import np_utils
 
 orig_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin.krn"
 modi_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
-f_orig = open(orig_file,"r")
+alphabet_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\kern_alphabet.txt"
+alphabet = []
+for line in open(alphabet_file, "r").readlines():
+    line = line.rstrip()
+    alphabet.append(line)
+alphabet.append('\\n')
+alphabet.append('\\t')
+alphabet.append('\\s')
+print(alphabet)
+f_orig = open(orig_file, "r")
 lines = f_orig.readlines()
 f_orig.close()
 
-f_mod = open(modi_file,"w")
-vocabulary = []
+f_mod = open(modi_file, "w")
 
 total_t = 0
 for line in lines:
@@ -19,18 +25,4 @@ for line in lines:
     elif line[0] == '*':
         continue
     else:
-
         f_mod.write(line)
-
-        for token in line.split('\t'):
-            total_t += 1
-            token = token.rstrip()
-            if not token in vocabulary:
-                vocabulary.append(token)
-
-total_v = 0
-for x in vocabulary:
-    total_v += 1
-
-print('Number of tokens in file: ' + str(total_t))
-print('Vocabulary in file: ' + str(total_v))
