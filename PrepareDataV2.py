@@ -19,7 +19,7 @@ f_mod = open(modi_file, "w")
 
 total_t = 0
 for line in lines:
-    line = line.translate(str.maketrans('', '', 'XYZxyz@%+|<>'))
+    line = line.translate(None, 'XYZxyz@%+|<>')
     if line[0] == '!':
         continue
     elif line[0] == '*':
