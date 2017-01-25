@@ -1,8 +1,14 @@
 from keras.utils import np_utils
 
-orig_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin.krn"
-modi_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
-alphabet_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\kern_alphabet.txt"
+#orig_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin.krn"
+#modi_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
+#alphabet_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\kern_alphabet.txt"
+
+
+orig_file = "/home/miberg/Desktop/NN/chopin.krn"
+modi_file = "/home/miberg/Desktop/NN/chopin_mod.krn"
+alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
+
 alphabet = []
 for line in open(alphabet_file, "r").readlines():
     line = line.rstrip()
@@ -26,5 +32,7 @@ for line in lines:
         continue
     else:
         f_mod.write(line)
+
+pass
 
 pass
