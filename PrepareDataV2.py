@@ -7,16 +7,10 @@ from keras.utils import np_utils
 
 orig_file = "/home/miberg/Desktop/NN/chopin.krn"
 modi_file = "/home/miberg/Desktop/NN/chopin_mod.krn"
-alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
 
-alphabet = []
-for line in open(alphabet_file, "r").readlines():
-    line = line.rstrip()
-    alphabet.append(line)
-alphabet.append('\\n')
-alphabet.append('\\t')
-alphabet.append('\\s')
-print(alphabet)
+#alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
+
+
 f_orig = open(orig_file, "r")
 lines = f_orig.readlines()
 f_orig.close()
@@ -33,6 +27,4 @@ for line in lines:
     else:
         f_mod.write(line)
 
-pass
 
-pass

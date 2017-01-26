@@ -7,7 +7,20 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
-file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
+#file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
+modi_file = "/home/miberg/Desktop/NN/chopin_mod.krn"
+alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
+
+
+alphabet = []
+for line in open(alphabet_file, "r").readlines():
+    line = line.rstrip()
+    alphabet.append(line)
+alphabet.append('\\n')
+alphabet.append('\\t')
+alphabet.append('\\s')
+print(alphabet)
+
 
 raw = []
 voc_map = {}
