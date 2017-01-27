@@ -5,8 +5,8 @@ from keras.utils import np_utils
 #alphabet_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\kern_alphabet.txt"
 
 
-orig_file = "/home/miberg/Desktop/NN/chopin.krn"
-modi_file = "/home/miberg/Desktop/NN/chopin_mod.krn"
+orig_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin.krn"
+modi_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
 
 #alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
 
@@ -19,7 +19,7 @@ f_mod = open(modi_file, "w")
 
 total_t = 0
 for line in lines:
-    line = line.translate(None, 'XYZxyz@%+|<>')
+    line = line.translate(str.maketrans('', '', 'XYZxyz@%+|<>'))
     if line[0] == '!':
         continue
     elif line[0] == '*':
