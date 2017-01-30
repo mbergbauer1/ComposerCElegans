@@ -1,12 +1,12 @@
 from keras.utils import np_utils
 
-#orig_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin.krn"
-#modi_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
+orig_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin.krn"
+modi_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
 #alphabet_file = "C:\\Users\\mbergbauer\\Desktop\\NN\\KernFiles\\kern_alphabet.txt"
 
 
-orig_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin.krn"
-modi_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
+# orig_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin.krn"
+# modi_file = "C:\\Users\\bergbmi\\Desktop\\NN\\KernFiles\\chopin_mod.krn"
 
 #alphabet_file = "/home/miberg/Desktop/NN/kern_alphabet.txt"
 
