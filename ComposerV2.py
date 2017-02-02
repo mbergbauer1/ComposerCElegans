@@ -48,14 +48,17 @@ def tokenize(line):
             b = line[pos+len(token):]
             line = a + b
     unique_tokens_in_line = list(set(tokens_in_line))
-    ordered_tokens_in_line = {}
+    tokens_with_position = {}
     for token in unique_tokens_in_line:
         #positions_of_tokens.append(list(find_all_pos(origline, token)))
         tmp = list(find_all_pos(origline,token))
         for pos in tmp:
-            ordered_tokens_in_line.update({pos:str(token)})
+            tokens_with_position.update({pos:str(token)})
+    ordered_tokens_in_line = []
+    for k, v in sorted(tokens_with_position.items()):
+        ordered_tokens_in_line.append(v)
 
-    return list(ordered_tokens_in_line)
+    return ordered_tokens_in_line
 
 raw = []
 voc_map = {}
@@ -63,6 +66,6 @@ nvoc = 1
 alphabet = createAlphabet(alphabet_file)
 for line in open(file):
     raw.append(tokenize(line))
-    pass
+pass
 
 
